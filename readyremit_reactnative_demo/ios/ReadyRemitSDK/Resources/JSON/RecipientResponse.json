@@ -1,0 +1,25 @@
+{
+  "result": {
+    "step": "Recipients",
+    "recipients": [
+      {
+        "id": 81,
+        "name": "Camylle, Darrel",
+        "countryIsoCode": "IN",
+        "fxRate": "1 USD = 74.6206 INR"
+      },
+      {
+        "id": 79,
+        "name": "Christiana, Willard",
+        "countryIsoCode": "IN",
+        "fxRate": "1 USD = 74.6206 INR"
+      },
+      {
+        "id": 80,
+        "name": "Reinhold, Olga",
+        "countryIsoCode": "PH",
+        "fxRate": "1 USD = 52.04 PHP"
+      }
+    ]
+  }
+}

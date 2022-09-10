@@ -1,0 +1,30 @@
+[
+  {
+    "country": {
+      "name": "United States of America",
+      "iso3Code": "USA123"
+    },
+    "currencies": [
+      {
+        "name": "US Dollar",
+        "iso3Code": "USD",
+        "symbol": "$",
+        "decimalPlaces": 2
+      }
+    ]
+  },
+  {
+    "country": {
+      "name": "Philippines",
+      "iso3Code": "PHL"
+    },
+    "currencies": [
+      {
+        "name": "Philipine Peso",
+        "iso3Code": "PHL",
+        "symbol": "₱",
+        "decimalPlaces": 2
+      }
+    ]
+  }
+]

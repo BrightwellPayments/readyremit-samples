@@ -1,0 +1,8 @@
+{
+	"sourceCurrency": {
+    "name": "US Dollar",
+    "iso3Code": "USD",
+    "symbol": "$",
+    "decimalPlaces": 2
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "message": "It's all broked up!",
+    "description": "Example of a 500 exception",
+    "code": "RR500"
+  }
+]
