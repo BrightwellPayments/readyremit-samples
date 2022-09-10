@@ -1,7 +1,0 @@
-[
-  {
-    "message": "Auth token missing from request",
-    "description": "401 Error",
-    "code": "TF001"
-  }
-]
