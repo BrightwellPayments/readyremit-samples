@@ -48,7 +48,7 @@ const App = () => {
     <SafeAreaView>
       <StatusBar />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Button title='Send Money' onPress={() => { ReadyRemitModule.launch("en"); }}></Button>
+        <Button title='Send Money' onPress={() => { ReadyRemitModule.launch("SANDBOX", "es", null); }}></Button>
       </ScrollView>
     </SafeAreaView>
   );
