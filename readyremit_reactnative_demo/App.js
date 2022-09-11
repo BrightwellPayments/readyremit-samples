@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     eventEmitter.addListener("READYREMIT_AUTH_TOKEN_REQUESTED", () => {
       // TODO: Fetch an auth token from your server
-      ReadyRemitModule.setAuthToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlyUmg0cHJQSGxfdm5KSm15dVdrcyJ9.eyJodHRwczovL2FwaS5yZWFkeXJlbWl0LmNvbS9zZW5kZXJfaWQiOiJmMjY2ZDAzNi02OTVjLTQ2ODYtOTU4Yi01MTBjOGU1MGY4ZjAiLCJpc3MiOiJodHRwczovL3JlYWR5cmVtaXQudXMuYXV0aDAuY29tLyIsInN1YiI6InltWnlHc0xtQ21oejdHTVNRUTVPS1VWeFlydHVIZm90QGNsaWVudHMiLCJhdWQiOiJodHRwczovL3NhbmRib3gtYXBpLnJlYWR5cmVtaXQuY29tIiwiaWF0IjoxNjYyOTE3MTQ5LCJleHAiOjE2NjMwMDM1NDksImF6cCI6InltWnlHc0xtQ21oejdHTVNRUTVPS1VWeFlydHVIZm90IiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.T-6jyl0plp6faZEjEVgN4w4jLrZu2EPG3_rJG2w0_NKP8KB9lN_NmiLCZCgGT9o02z0kCqdqRG23o_KyIu7FwS2lgh71bpX5KQgyY8LuuvkCNRkI0SHFo7EP0p089eadPZLXAi1WsGD3R1N0Tj_K6MYN5Wevaa4L4j3yjSrnVku-ElMyD8u3qH_2ALG_WjmR9eoV8PxSHb4SucCygl18w0aWvIlmmbzNj0A3WyUMn8-OclTfM9dGtcW8sjB42cdQFzKnmgbCvHd9Rszv6pebN2_SMeJbpCoDOY3-c8qvkbn2nJY2OPQ6YgOHZJDzYshWf7SJzE6UVN-PAnYat6XuuQ", null);
+      ReadyRemitModule.setAuthToken("[ACCESS TOKEN]", null);
     })
 
     return function cleanup () {
@@ -34,9 +34,9 @@ const App = () => {
 
   useEffect(() => {
     eventEmitter.addListener("READYREMIT_TRANSFER_SUBMITTED", (request) => {
-      // TODO: Fetch a transferId from your server
+      // TODO: Submit the transfer to your server. A transfer ID should be returned.
       console.log(`TRANSFER REQUEST: ${JSON.stringify(request)}`);
-      ReadyRemitModule.setTransferId("", "");
+      ReadyRemitModule.setTransferId("[TRANSFER_ID]", "");
     })
 
     return function cleanup () {
