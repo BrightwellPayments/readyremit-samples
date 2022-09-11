@@ -5,8 +5,11 @@ import com.brightwell.readyremit.sdk.*
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.modules.core.DeviceEventManagerModule.RCTDeviceEventEmitter
+import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
+import java.util.*
 
 class ReadyRemitModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     private val REQUEST_CODE = 10
@@ -20,10 +23,10 @@ class ReadyRemitModule(reactContext: ReactApplicationContext) : ReactContextBase
     }
 
     @ReactMethod
-    fun launch(language: String = "en") {
+    fun launch(environment: String, language: String = "en", styles: ReadableMap? = null) {
         ReadyRemit.initialize(
             ReadyRemit.Config.Builder(currentActivity!!.application)
-                .useEnvironment(Environment.DEVELOPMENT)
+                .useEnvironment(if(environment == "PRODUCTION") Environment.PRODUCTION else Environment.SANDBOX)
                 .useAuthProvider { callback -> requestReadyRemitAccessToken(callback) }
                 .useTransferSubmitProvider  { request, callback -> submitReadyRemitTransfer(request, callback) }
                 .useDefaultTheme(R.style.Base_Theme_ReadyRemit_Light)
@@ -69,9 +72,11 @@ class ReadyRemitModule(reactContext: ReactApplicationContext) : ReactContextBase
         runBlocking {
             _onTransferCallback = callback
 
+            var jsonRequest = Gson().toJson(request)
+
             reactApplicationContext
                 .getJSModule(RCTDeviceEventEmitter::class.java)
-                .emit(READYREMIT_TRANSFER_SUBMITTED, request.toString())
+                .emit(READYREMIT_TRANSFER_SUBMITTED, jsonRequest)
         }
     }
 }
